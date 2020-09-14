@@ -1,5 +1,9 @@
 <?php
-require_once '../config.php'
+$host = 'd83299.mysql.zonevs.eu';
+$db = 'd83299_books';
+$user = 'd83299sa325719';
+$pass = 'Krissu2001';
+$charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $options = [
@@ -29,8 +33,8 @@ $aBooks = $stmt->fetchAll();
     <ul>
         <?php
          foreach ($aBooks as $book) {
-             echo '<li>' . $book['title'];
-            }
+            echo '<li>' . '<a href="book.php?id=' . $book['id'] . '">' . $book['title'] . '</a>' . '</li>';
+         }
          ?>
     </ul>
 </body>
